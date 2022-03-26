@@ -1,22 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React, {useState} from "react";
 
 function App() {
-  return (
+
+  const [idade, setIdade] = useState(0);
+
+  const handleIdadeChange = (event) => {
+    setIdade(event.target.value);
+
+  }
+  const [Nasci, setNasci] = useState(0);
+  
+  function handleClick(){
+
+    setNasci (2022-idade);
+
+  }
+    return (
     <div className="App">
+
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <h1>Cálculo Data de Nascimento</h1> 
+
+          <p>Digite sua idade:</p>
+
+              <input value={idade} onChange={handleIdadeChange} />
+
+              <br></br><button onClick={handleClick}>CALCULAR</button>
+
+          <p>Ano do seu Nascimento (resultado)</p>
+
+              <input value={Nasci} />
+
       </header>
     </div>
   );
